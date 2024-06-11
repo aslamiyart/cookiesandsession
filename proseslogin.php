@@ -14,7 +14,9 @@ if ($result->num_rows > 0) {
  //cek remember me
  if(isset($_POST['remember'])){
     //buat cookie
-    setcookie('login','true',time()+60);
+        $cookie_name="login";
+        $cookie_value="true";
+        setcookie($cookie_name,$cookie_value,time()+3600,"/");
  }
  header("Location: index.php"); 
 } else { 
